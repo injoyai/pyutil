@@ -16,7 +16,7 @@ class Camera:
             ret, frame = cap.read()
             if ret:
                 self.__run_last(frame)
-                if self.__run_middle(frame):
+                if not self.__run_middle(frame):
                     break
         cap.release()
         cv2.destroyAllWindows()
